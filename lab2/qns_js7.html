@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+
+    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" width="200" height="200" alt="" class="img">
+    <p class="caption">Put cursor in the image</p>
+
+
+    <script>
+        const img = document.querySelector(".img");
+        const capt = document.querySelector(".caption");
+
+        img.onmouseover = () => {
+            capt.innerText = "You has cursor in image";
+        }
+
+        img.onmouseout = () => {
+            capt.innerText = "Put cursor in the image";
+        }
+
+    </script>
+
+    <body>
+
+</html>

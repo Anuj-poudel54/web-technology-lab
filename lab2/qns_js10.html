@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Selectors Example</title>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<!-- HTML content for demonstration -->
+<div id="container">
+    <h2>jQuery Selectors Example</h2>
+    <p class="paragraph">This is a paragraph.</p>
+    <p class="paragraph">Another paragraph.</p>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li class="special-item">Special Item</li>
+    </ul>
+    <input type="text" id="inputField" value="Input Field">
+</div>
+
+<script>
+    // Document ready function to ensure the DOM is fully loaded
+    $(document).ready(function () {
+
+        // Basic selectors
+        $("#container").css("border", "2px solid red");
+
+        // Element selectors
+        $("p").css("color", "blue");
+
+        // Class selectors
+        $(".paragraph").css("font-weight", "bold");
+
+        // ID selector
+        $("#inputField").val("Changed Input Field");
+
+        // Attribute selectors
+        $("li[class='special-item']").css("background-color", "yellow");
+
+        // Child selectors
+        $("#container > ul > li").css("list-style-type", "none");
+
+        // Descendant selectors
+        $("#container li").css("border", "1px solid green");
+
+        // :first selector
+        $("li:first").css("color", "purple");
+
+        // :last selector
+        $("li:last").css("color", "orange");
+
+        // :even selector
+        $("li:even").css("background-color", "lightgray");
+
+        // :odd selector
+        $("li:odd").css("background-color", "lightblue");
+    });
+</script>
+
+</body>
+</html>

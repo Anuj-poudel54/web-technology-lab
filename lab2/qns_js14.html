@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Slide Up and Slide Down Effect</title>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<!-- HTML content for demonstration -->
+<div id="slideUpDownDemo">
+    <h2>Slide Up and Slide Down Effect</h2>
+    <button id="slideUpButton">Slide Up</button>
+    <button id="slideDownButton">Slide Down</button>
+    <p id="slideUpDownParagraph">This is a paragraph.</p>
+</div>
+
+<script>
+    // Document ready function to ensure the DOM is fully loaded
+    $(document).ready(function () {
+        // Slide Up button click event
+        $("#slideUpButton").click(function () {
+            $("#slideUpDownParagraph").slideUp("slow");
+        });
+
+        // Slide Down button click event
+        $("#slideDownButton").click(function () {
+            $("#slideUpDownParagraph").slideDown("slow");
+        });
+    });
+</script>
+
+</body>
+</html>

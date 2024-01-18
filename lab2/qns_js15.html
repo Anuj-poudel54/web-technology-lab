@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Example</title>
+</head>
+
+<body>
+
+    <script>
+        // Creating JSON data
+        var person = {
+            "name": "John Doe",
+            "age": 30,
+            "city": "New York"
+        };
+
+        // Converting JavaScript object to JSON string
+        var jsonString = JSON.stringify(person);
+
+        // Displaying the JSON string
+        console.log("JSON String:", jsonString);
+
+        // Retrieving JSON data from a string
+        var retrievedPerson = JSON.parse(jsonString);
+
+        // Displaying the retrieved JavaScript object
+        console.log("Retrieved Person:", retrievedPerson);
+
+        // Accessing properties of the retrieved object
+        var retrievedName = retrievedPerson.name;
+        var retrievedAge = retrievedPerson.age;
+        var retrievedCity = retrievedPerson.city;
+
+        // Displaying the retrieved properties
+        console.log("Retrieved Name:", retrievedName);
+        console.log("Retrieved Age:", retrievedAge);
+        console.log("Retrieved City:", retrievedCity);
+    </script>
+
+</body>
+
+</html>

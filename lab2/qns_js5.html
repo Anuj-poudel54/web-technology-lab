@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+
+    <form action="">
+        <input type="number" name="id" placeholder="ID"><br>
+        <input type="text" name="name" placeholder="name"><br>
+        <input type="text" name="address" placeholder="address"><br>
+        <input type="number" name="age" minplaceholder="age"><br>
+        Gender:
+        <input type="radio" value="Male" name="gender"> Male
+        <input type="radio" value="Female" name="gender"> Female
+        <input type="radio" value="other" name="gender"> other
+
+        <br>
+        <input type="tel" name="contact" placeholder="Contact no"><br>
+        <input type="email" name="email" placeholder="email"><br>
+        <button>submit</button>
+    </form>
+
+    <script>
+
+        const form = document.forms[0];
+        let submit = true;
+        const requiredFields = [
+            form['id'],
+            form['name'],
+            form['address']
+        ];
+        const failConditions = [
+            form['id'].type !== 'number',
+            (form['age'].type !== 'number') || form['age'].value < 0,
+            form['gender'].value,
+            /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/.test(form['contact'].value),
+            /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(form['email'].value)
+        ];
+
+        form.onsubmit = (e) => {
+            e.preventDefault();
+            for (let field of requiredFields) {
+                if (!field.value) { break; submit = false };
+            }
+
+            for (let condition of failConditions) {
+                if (!condition) { break; submit = false };
+            }
+
+            if (submit) form.submit();
+        }
+    </script>
+
+    <body>
+
+</html>

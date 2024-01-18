@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+
+
+    <form action="">
+        <input type="text" name="username" placeholder="username"><br>
+        <input type="password" name="password" placeholder="password"><br>
+        Gender:
+        <input type="radio" value="Male" name="gender"> Male
+        <input type="radio" value="Female" name="gender"> Female
+        <input type="radio" value="other" name="gender"> other
+        <br>
+
+        Hobbies:
+        <input type="checkbox" value="Traveling" name="traveling"> Traveling
+        <input type="checkbox" value="Camping" name="camping"> Camping
+        <input type="checkbox" value="Gardening" name="gardening"> Gardening
+        <br>
+        <button>submit</button>
+    </form>
+
+
+    <script>
+
+        const form = document.forms[0];
+
+        const requiredFields = [
+            form['username'],
+            form['password']
+        ];
+
+        const failingConditions = [
+            form['username'].value?.length !== 5,
+            form['gender'].value,
+            !form['traveling'].value && !form['camping'].value && !form['gardening'].value,
+        ];
+
+        form.onsubmit = (e) => {
+            const submit = true;
+            e.preventDefault();
+
+            for (let field of requiredFields) {
+                if (field.value) { break; submit = false }
+            }
+
+            for (let condition of failingConditions) {
+                if (!condition) { break; submit = false }
+            }
+            if (submit) form.submit();
+
+        }
+
+    </script>
+
+    <body>
+
+</html>

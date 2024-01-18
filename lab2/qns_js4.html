@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+
+    <div class="add">
+        <input type="number" class="num1">
+        <input type="number" class="num2">
+        <button>Submit</button>
+    </div>
+
+    <div class="simple-int">
+        <input type="text" class="p">
+        <input type="text" class="r">
+        <input type="text" class="t">
+        <button class="si">Calculate SI</button>
+    </div>
+
+    <script>
+        const n1 = document.querySelector(".num1");
+        const n2 = document.querySelector(".num2");
+        const btn = document.querySelector("button");
+
+        btn.onclick = () => {
+            alert(` sum = ${+n1 + +n2}`)
+        }
+
+        btn.onclick = () => {
+            alert(` sum = ${+n1 + +n2}`)
+        }
+        // SI
+
+        document.querySelector(".si").onclick = () => {
+            const si = +document.querySelector(".p")*+document.querySelector(".p")*+document.querySelector(".p");
+            alert(`sum=${si}`);
+        }        
+
+    </script>
+
+    <body>
+
+</html>

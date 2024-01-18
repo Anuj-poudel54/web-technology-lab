@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Events Example</title>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<!-- HTML content for demonstration -->
+<div id="eventDemo">
+    <h2>jQuery Events Example</h2>
+    <button id="clickButton">Click Me</button>
+    <input type="text" id="textInput" placeholder="Type something...">
+    <p id="hoverParagraph">Hover over me</p>
+</div>
+
+<script>
+    // Document ready function to ensure the DOM is fully loaded
+    $(document).ready(function () {
+
+        // Click event
+        $("#clickButton").click(function () {
+            alert("Button Clicked!");
+        });
+
+        // Double click event
+        $("#clickButton").dblclick(function () {
+            alert("Button Double Clicked!");
+        });
+
+        // Mouseover event
+        $("#hoverParagraph").mouseover(function () {
+            $(this).css("color", "red");
+        });
+
+        // Mouseout event
+        $("#hoverParagraph").mouseout(function () {
+            $(this).css("color", "black");
+        });
+
+        // Change event for input
+        $("#textInput").change(function () {
+            alert("Input value changed: " + $(this).val());
+        });
+
+        // Focus event for input
+        $("#textInput").focus(function () {
+            $(this).css("background-color", "lightyellow");
+        });
+
+        // Blur event for input
+        $("#textInput").blur(function () {
+            $(this).css("background-color", "white");
+        });
+    });
+</script>
+
+</body>
+</html>

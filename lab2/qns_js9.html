@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+
+
+
+    <script>
+        // Function to set a cookie
+        function setCookie(name, value, daysToExpire) {
+            var date = new Date();
+            date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+
+        // Function to get a cookie value by name
+        function getCookie(name) {
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var cookiesArray = decodedCookie.split(';');
+            for (var i = 0; i < cookiesArray.length; i++) {
+                var cookie = cookiesArray[i].trim();
+                if (cookie.indexOf(name + "=") === 0) {
+                    return cookie.substring(name.length + 1);
+                }
+            }
+            return null;
+        }
+
+        // Example usage
+        setCookie("username", "John Doe", 7); // Set a cookie named "username" with value "John Doe" that expires in 7 days
+
+        var storedUsername = getCookie("username"); // Retrieve the value of the "username" cookie
+        if (storedUsername) {
+            console.log("Username: " + storedUsername);
+        } else {
+            console.log("Username cookie not found.");
+        }
+
+
+    </script>
+
+    <body>
+
+</html>

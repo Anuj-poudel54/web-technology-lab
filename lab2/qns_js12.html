@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Hide and Show Effect</title>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<!-- HTML content for demonstration -->
+<div id="hideShowDemo">
+    <h2>Hide and Show Effect</h2>
+    <button id="hideButton">Hide</button>
+    <button id="showButton">Show</button>
+    <p id="hideShowParagraph">This is a paragraph.</p>
+</div>
+
+<script>
+    // Document ready function to ensure the DOM is fully loaded
+    $(document).ready(function () {
+        // Hide button click event
+        $("#hideButton").click(function () {
+            $("#hideShowParagraph").hide("slow");
+        });
+
+        // Show button click event
+        $("#showButton").click(function () {
+            $("#hideShowParagraph").show("slow");
+        });
+    });
+</script>
+
+</body>
+</html>

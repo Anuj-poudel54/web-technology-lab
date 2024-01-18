@@ -1,0 +1,85 @@
+<script>
+    function isOddEven(num) {
+        if (num > 30 && num < 100) {
+            if (num % 2 === 0)
+                alert("Number is even")
+            else
+                alert("Number is odd")
+        }
+    }
+
+
+    function facto(num) {
+        if (num === 1)
+            return 1;
+        return num * facto(num - 1);
+    }
+
+    function profitLoss() {
+        const cp = document.querySelector(".cp");
+        const sp = document.querySelector(".sp");
+
+        const amount = sp - cp;
+        alert(` you have ${amount < 0 ? 'loss' : 'profit'} of amount ${amount} `);
+    }
+
+    function isPrime(num, checkEven = true) {
+        if (checkEven)
+            if (num % 2 === 0 || !checkEven) return;
+
+        for (let i = 0; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                alert("Not prime");
+                return 0;
+            }
+        }
+        alert("Prime");
+        return 1;
+    }
+
+    function prime100() {
+        for (let i = 0; i <= 100; i++) {
+            if (isPrime(i, false)) document.write(`${i}`);
+        }
+    }
+
+    function allPopups() {
+        alert("Popup alert");
+        const show = confirm("Show prompt?");
+        if (show)
+            prompt("Enter something")
+    }
+
+    function d1Array() {
+        const array = [231, 312, 31, 23, 12, 31, 24, 23, 42];
+        array.push(0); // insert
+        const last = array.pop();
+        const length = array.length;
+        const elem3 = array.at(2);
+        const string = array.join(",");
+        for (const elem in array) {
+            document.write(elem);
+        }
+    }
+
+    function d2Array() {
+        const matrix = [
+            [2, 3, 4],
+            [2, 1, 40],
+        ];
+    }
+
+    const obj = {
+        name: 'anuj',
+        program: "csit",
+        roll: 6
+    }
+
+    const objectArray = [
+    {a: 'a'},
+    {a: 'b'},
+    {a: 'c'},
+    {a: 'd'},
+    ];
+
+</script>
